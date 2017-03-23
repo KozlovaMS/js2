@@ -1,0 +1,15 @@
+﻿<html>
+    <head>
+    </head>
+    <body>
+        <div id="task1"></div>
+        <div id="task2"></div>
+        <script src="script.js"></script>
+        <script>
+            var phone = new Phones('/phones.json');
+            phone.fileGet();
+            var gallery = new Gallery('/images.json');
+            gallery.fileGet();
+        </script>
+    </body>
+</html>
