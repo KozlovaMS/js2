@@ -1,0 +1,17 @@
+﻿<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            function check(a){
+                //если не учитывать русские буквы и регистр, то:
+                //a=a.match(/\w/ig);return a.join('')==a.reverse().join('');
+                a=a.toLowerCase().match(/[a-zа-яё]/ig);return a.join('')==a.reverse().join('');
+            }
+            console.log(check('level'));
+            console.log(check('levels'));
+            console.log(check('A car, a man, a maraca'));
+            console.log(check('А роза упала на лапу Азора'));
+        </script>
+    </body>
+</html>

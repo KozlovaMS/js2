@@ -1,0 +1,36 @@
+﻿<html>
+    <head>
+    </head>
+    <body>
+        <form action="" method="post">
+           Укажите телефон в формате +7(965)-123-45-67: <input type="text" name="phone" id="phone"><br>
+           Укажите e-mail: <input type="text" name="email" id="email"><br>
+           Укажите серию и номер паспорта<input type="text" name="pass" id="pass">
+        </form>
+        <script>
+            document.getElementById('phone').onblur = function(){
+                if (/^\+\d\(\d{3}\)-\d{3}-\d{2}-\d{2}$/.test(this.value)){
+                    this.style.border = "2px solid green";
+                } else {
+                    this.style.border = "2px solid red";
+                }
+            };
+            
+            document.getElementById('email').onblur = function(){
+                if (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(this.value)){
+                    this.style.border = "2px solid green";
+                } else {
+                    this.style.border = "2px solid red";
+                }
+            };
+            
+            document.getElementById('pass').onblur = function(){
+                if (/^\d{2} \d{2} \d{6}$/.test(this.value)){
+                    this.style.border = "2px solid green";
+                } else {
+                    this.style.border = "2px solid red";
+                }
+            };
+        </script>
+    </body>
+</html>
