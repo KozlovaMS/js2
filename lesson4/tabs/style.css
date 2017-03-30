@@ -1,0 +1,63 @@
+﻿.tabs {
+    width: 600px;
+    height: 400px;
+    margin: 10px auto;
+    background-color: LightYellow;
+    border: 1px solid DarkKhaki;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.tabs ul {
+    margin: 0;
+    padding: 0;
+}
+
+.tabs > div {
+    display: none;
+    padding: 10px;
+    background-color: PapayaWhip;
+    border: 1px solid DarkKhaki;
+}
+
+.tabs li {
+    list-style-type: none;
+    padding: 10px 15px;
+    height: 20px;
+    background-color: PaleGreen;
+    border: 1px solid DarkKhaki;
+    cursor: pointer;
+    width: 125px;
+    text-align: center;
+}
+
+li.active {
+    background-color: MediumSeaGreen;
+    font-weight: bold;
+}
+
+.horizon > div {
+    width: 550px;
+    height: 330px;
+}
+
+.horizon li {
+    display: inline-block;
+    margin: 5px 1px 0 1px;
+    border-radius: 10px 10px 0 0;
+}
+
+.vertical ul{
+    float: left;
+}
+
+.vertical > div {
+    width: 390px;
+    height: 370px;
+    float: left;
+}
+
+.vertical li {
+    margin: 5px 0 1px 1px;
+    border-radius: 10px 0 0 10px;
+}

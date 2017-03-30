@@ -1,0 +1,43 @@
+﻿<html>
+    <head>
+        <script src="jquery-3.2.0.min.js"></script>
+        <script src="script.js"></script>
+        <style>
+            input, select, textarea {
+                margin: 5px;
+            }
+            .error {
+                color: red;
+                font-weight: bold;
+                display: none;
+            }
+            .result_plus{
+                color: green;
+                font-weight: bold;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="" method="post">
+            Логин: <input type="text" name="username" id="username" required> 
+            <span class="error">Длина логина должна быть от 6 до 100 символов</span><br>
+            Пароль: <input type="password" name="password" id="password" required> 
+            <span class="error">Длина пароля должна быть от 6 до 100 символов</span><br>
+            E-mail: <input type="email" name="email" id="email" required> 
+            <span class="error">Проверьте указанный e-mail</span><br>
+            Пол: <select name="gender" id="gender" required>
+                <option value="m">Мужской</option>
+                <option value="f">Женский</option>
+            </select><span class="error">Укажите пол</span><br>
+            Номер карты: <input type="text" name="credit_card" id="credit_card" required> 
+            <span class="error">Проверьте указанный номер карты</span><br>
+            О себе:<br>
+            <textarea name="bio" id="bio" required></textarea><span class="error">Пожалуйста, заполните поле</span><br>
+            Дата рождения: <input type="date" name="birth" id="birth" required><span class="error">Пожалуйста, заполните поле</span><br>
+            <button id="sub">Отправить</button>
+        </form>
+        <span class="error global"></span>
+        <span class="result_plus">Поздравляем, Вы успешно прошли регистрацию!</span>
+    </body>
+</html>
