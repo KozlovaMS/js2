@@ -1,0 +1,78 @@
+﻿<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="jquery-ui.min.css"/>
+        <script src="jquery-3.2.0.min.js"></script>
+        <script src="jquery-ui.min.js"></script>
+        <script src="script.js"></script>
+        <style>
+            input, select, textarea {
+                margin: 5px;
+            }
+            .result_plus{
+                color: green;
+                font-weight: bold;
+                display: none;
+            }
+            #progressbar{
+                height: 20px;
+                width: 280px;
+            }
+            .ui-progressbar-value{
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="error" title="Ошибка"></div>
+        <div id="progressbar"></div>
+        <form action="" method="post" id="form">
+            Логин: <input type="text" name="username" id="username" required> 
+            <br>
+            Пароль: <input type="password" name="password" id="password" required> 
+            <br>
+            E-mail: <input type="email" name="email" id="email" required> 
+            <br>
+            Пол: <select name="gender" id="gender" required>
+                <option value="0" selected="selected">Выберите пол</option>
+                <option value="m">Мужской</option>
+                <option value="f">Женский</option>
+            </select>
+            <br>
+            Номер карты: <input type="text" name="credit_card" id="credit_card" required> 
+            <br>
+            О себе:<br>
+            <textarea name="bio" id="bio" required></textarea>
+            <div class="error" title="Ошибка"></div><br>
+            Дата рождения: <input type="date" name="birth" id="birth" required>
+            <br>
+            <button id="sub">Отправить</button>
+        </form>
+        <div class="error" title="Ошибка"></div>
+        <span class="result_plus">Поздравляем, Вы успешно прошли регистрацию!</span>
+        <script>
+            $('#birth').datepicker({
+                changeMonth: true,
+                changeYear: true,
+                dayNames: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+                dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                firstDay: 1,
+                monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+                monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
+                showAnim: "bounce",
+                dateFormat: 'yy-mm-dd'
+            });
+            $( "#progressbar" ).progressbar({value: 0});
+            $("#error").dialog({
+                autoOpen: false,
+                show: "bounce",
+                hide: "bounce",
+                modal:true,
+                buttons:{
+                    Ok: function(){
+                        $(this).dialog( "close" );
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
